@@ -80,9 +80,6 @@ public class InstallUtils {
         try (PackageInstaller.Session session = packageInstaller.openSession(sessionId)) {
             Intent intent = new Intent(context, InstallResultReceiver.class);
             intent.setAction(InstallResultReceiver.ACTION_INSTALL_RESULT);
-            //
-            intent.putExtra("A", "ABC");
-
             PendingIntent pendingIntent = PendingIntent.getBroadcast(context,
                     1, intent,
                     PendingIntent.FLAG_UPDATE_CURRENT);
